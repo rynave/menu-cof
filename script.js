@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // const mainMenuBtn = document.getElementById('main-menu-btn'); // این خط حذف شد
 
     // مقدار یکی از گزینه‌های زیر باشه: 'spring', 'summer', 'autumn', 'winter'
-    const CURRENT_SEASON = 'winter, autumn'; // <=== اینجا رو تغییر بده
+    const CURRENT_SEASON = 'autumn'; // <=== اینجا رو تغییر بده
 
 
     function applySeasonalTheme(season) {
@@ -42,4 +42,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- اجرای اولیه ---
     // تم بر اساس متغیری که در بالا تعیین کردی اعمال میشه
     applySeasonalTheme(CURRENT_SEASON);
+
 });
