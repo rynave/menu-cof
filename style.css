@@ -1,0 +1,154 @@
+/* --- استایل‌های کلی و فونت --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.6s ease;
+    /* بک‌گراند پیش‌فرض ساده */
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 90%;
+    max-width: 450px; /* کمی کوچکتر چون 4 تا دکمه داریم */
+    text-align: center;
+    padding: 1rem;
+}
+
+header h1 {
+    font-family: 'MORABA', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* --- گرید دکمه‌ها (رسپانسیو) --- */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* همیشه 2 ستونه */
+    gap: 1.5rem;
+}
+
+/* --- استایل دکمه‌ها --- */
+.menu-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    background-color: #ffffff;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.menu-button .icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.menu-button .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* استایل دکمه غیرفعال */
+.menu-button.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    filter: grayscale(80%);
+}
+
+.menu-button.disabled:hover {
+    transform: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* استایل دکمه فعال (فصل جاری) */
+.menu-button.active {
+    border-color: #fff;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* --- استایل پیام هاور --- */
+.hover-message {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    transition: bottom 0.3s ease-in-out;
+}
+
+.menu-button.disabled:hover .hover-message {
+    bottom: 0;
+}
+
+
+/* --- تم‌های فصلی با بک‌گراند گرادینت ساده --- */
+
+/* تم بهار: گرادینت سبز روشن */
+body.theme-spring {
+    background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+    color: #2d5016;
+}
+body.theme-spring header h1, body.theme-spring header p { color: #2d5016; }
+body.theme-spring .menu-button { background-color: rgba(255, 255, 255, 0.85); }
+body.theme-spring .spring-btn.active { background-color: #96e6a1; color: #2d5016; }
+
+/* تم تابستان: گرادینت زرد و نارنجی ملایم */
+body.theme-summer {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    color: #5d4037;
+}
+body.theme-summer header h1, body.theme-summer header p { color: #5d4037; }
+body.theme-summer .menu-button { background-color: rgba(255, 255, 255, 0.85); }
+body.theme-summer .summer-btn.active { background-color: #fcb69f; color: #5d4037; }
+
+/* تم پاییز: گرادینت نارنجی و قرمز روشن */
+body.theme-autumn {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+    color: #4a2c2a;
+}
+body.theme-autumn header h1, body.theme-autumn header p { color: #4a2c2a; }
+body.theme-autumn .menu-button { background-color: rgba(255, 255, 255, 0.85); }
+body.theme-autumn .autumn-btn.active { background-color: #fab1a0; color: #4a2c2a; }
+
+/* تم زمستان: گرادینت آبی و صورتی یخی */
+body.theme-winter {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #4a4a4a;
+}
+body.theme-winter header h1, body.theme-winter header p { color: #4a4a4a; }
+body.theme-winter .menu-button { background-color: rgba(255, 255, 255, 0.85); }
+body.theme-winter .winter-btn.active { background-color: #a8edea; color: #4a4a4a; }
